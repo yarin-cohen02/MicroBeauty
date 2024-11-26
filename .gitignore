@@ -1,0 +1,10 @@
+# Ignore .env files in both frontend and backend
+.env
+
+build/
+.cache/
+backend/node_modules/
+frontend/frontend/node_modules/
+
+# Logs
+*.log
