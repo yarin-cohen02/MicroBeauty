@@ -12,6 +12,10 @@ app.get('/api', (req, res) => {
     res.json({ message: 'Hello from the API!' });
 });
 
+app.get('/', (req, res) => {
+    res.json({ message: 'Hello! how are you?' });
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
