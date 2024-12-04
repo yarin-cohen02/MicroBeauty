@@ -1,0 +1,33 @@
+/* Header.css */
+.header {
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  .title {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    color: #fff;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
