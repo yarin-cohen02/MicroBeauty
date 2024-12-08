@@ -11,7 +11,7 @@
   .nav-list {
     list-style: none;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     padding: 0;
     margin: 10px 0 0;
     gap: 1rem;
@@ -23,7 +23,7 @@
     padding: 5px;
     color: #fff;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     gap: 10px;
     align-items: center;
     border-radius: 5px 5px 0 0;

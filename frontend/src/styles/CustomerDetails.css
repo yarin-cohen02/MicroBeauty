@@ -1,25 +1,35 @@
 .customer-details {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 10px;
-    font-family: 'Rubik', sans-serif;
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background-color: #f3f3f3;
+  padding: 20px;
+  border-radius: 8px;
   }
   
   .details-row {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    position: relative;
+    flex-direction: row;
     margin-bottom: 10px;
   }
   
   .details-label {
     font-weight: bold;
     font-size: 16px;
-    text-align: right;
   }
   
   .details-value {
     font-size: 16px;
+    position: absolute;
+    right: 120px;
     text-align: right;
+  }
+
+  .details-column {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 10px; /* Space between rows */
   }
   

@@ -10,12 +10,13 @@ const CustomerDetails = (customerId) => {
     city: "חולון",
     address: "B2 כחול",
     source: "רשתות חברתיות",
-    treatmentPlan: "v",
+    treatmentPlan: "V",
     documentStatus: "",
   };
 
   return (
     <div className="customer-details">
+    <div className="details-column">
       <div className="details-row">
         <div className="details-label">שם מלא</div>
         <div className="details-value">{customer.name}</div>
@@ -28,6 +29,9 @@ const CustomerDetails = (customerId) => {
         <div className="details-label">טלפון נייד</div>
         <div className="details-value">{customer.phone}</div>
       </div>
+    </div>
+
+    <div className="details-column">
       <div className="details-row">
         <div className="details-label">תאריך לידה</div>
         <div className="details-value">{customer.birthDate}</div>
@@ -40,6 +44,9 @@ const CustomerDetails = (customerId) => {
         <div className="details-label">מחט וצבע</div>
         <div className="details-value">{customer.address}</div>
       </div>
+    </div>
+
+    <div className="details-column">
       <div className="details-row">
         <div className="details-label">מקור הגעה</div>
         <div className="details-value">{customer.source}</div>
@@ -53,6 +60,9 @@ const CustomerDetails = (customerId) => {
         <div className="details-value">{customer.documentStatus}</div>
       </div>
     </div>
+
+  </div>
+  
   );
 };
 

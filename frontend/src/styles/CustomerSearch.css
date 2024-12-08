@@ -1,5 +1,6 @@
 .customer-search {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     background-color: #f7f7f7; /* Light gray background */
     border-radius: 10px;
