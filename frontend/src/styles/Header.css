@@ -4,8 +4,8 @@
     background: rgb(219,210,210);
     background: linear-gradient(48deg, rgba(219,210,210,1) 0%, rgba(162,155,155,1) 100%);
     padding: 10px 50px 0 50px;
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: 900;
+    font-size: 14px;
   }
   
   .nav-list {
@@ -33,4 +33,8 @@
   .nav-item.active {
     background-color: white; /* Or any other color you want for the active tab */
     color: rgb(181, 178, 178); /* Optional: make the text color of the active tab distinct */
+  }
+
+  .menu-icon {
+    font-size: 12px;
   }
