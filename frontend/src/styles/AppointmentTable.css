@@ -1,0 +1,27 @@
+.appointment-table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+  }
+  
+  .appointment-table th, .appointment-table td {
+    padding: 5px;
+    text-align: center;
+    background-color: #f3f3f3;
+    border-radius: 3px;
+  }
+  
+  .appointment-table th {
+    font-weight: bold;
+  }
+  
+  .apt-button {
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgb(166, 166, 166);
+    color: white;
+    font-family: 'Rubik';
+  }
+  

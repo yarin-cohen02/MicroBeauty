@@ -28,11 +28,12 @@
     align-items: center;
     border-radius: 5px 5px 0 0;
     justify-content: center; 
+    cursor: pointer;
   }
   
   .nav-item.active {
-    background-color: white; /* Or any other color you want for the active tab */
-    color: rgb(181, 178, 178); /* Optional: make the text color of the active tab distinct */
+    background-color: white; 
+    color: rgb(181, 178, 178); 
   }
 
   .menu-icon {

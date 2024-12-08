@@ -1,0 +1,11 @@
+.black-list-btn {
+    padding: 5px 15px;
+    font-family: 'Rubik';
+    font-size: 16px;
+    background-color: black;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}

@@ -4,8 +4,9 @@
 }
 
 .new-section {
-    margin: 40px 0 10px 0;
+    margin: 40px 0 10px 15px;
     font-size: 17px;
+    display: inline-block;
 }
 
 .btns-container {

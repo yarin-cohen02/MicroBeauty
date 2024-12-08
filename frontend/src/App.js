@@ -5,7 +5,7 @@ import CustomersPage from "./pages/CustomersPage";
 
 const App = () => {
 
-  const [currentPage, setCurrentPage] = useState("בית");
+  const [currentPage, setCurrentPage] = useState("לקוחות");
   
   const menuTabs = [
     { name: "בית", icon: "fa-house" },
