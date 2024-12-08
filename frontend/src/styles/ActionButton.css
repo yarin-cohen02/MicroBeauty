@@ -1,0 +1,10 @@
+.action-btn {
+    width: 150px;
+    padding: 5px 5px;
+    font-family: 'Rubik';
+    font-size: 16px;
+    background-color: rgb(166, 166, 166);
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
