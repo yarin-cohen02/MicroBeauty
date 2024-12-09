@@ -29,7 +29,7 @@ const CustomersPage = () => {
     return (
         <div className="customers-page">
 
-            <CustomerSearch placeholder="חפש לפי שם מלא / מספר טלפון / ת.ז." onSearch={handleSearch}/>
+            <CustomerSearch placeholder="חפש לפי שם מלא / מספר טלפון / ת.ז. / הערה חופשית" onSearch={handleSearch}/>
             <h2 className="new-section">פרטים כלליים</h2>
             {/* <BlackList/> */}
             <CustomerDetails cusomerId="1"/>
