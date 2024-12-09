@@ -30,7 +30,7 @@
 
   .details-column {
     display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    gap: 10px; /* Space between rows */
+    flex-direction: column; 
+    gap: 10px;
   }
   

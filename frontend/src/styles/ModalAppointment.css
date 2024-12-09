@@ -1,0 +1,22 @@
+.modal-apt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 20px 0
+  }
+  
+  .modal-apt-table td {
+    padding-bottom: 10px;
+  }
+  
+  .label-modal-apt {
+    width: 20%;
+  }
+  
+  .modal-apt-table input {
+    width: 60%;
+  }
+
+  .first-sec {
+    margin-bottom: 10px;
+  }
+  

@@ -8,3 +8,7 @@ body {
   text-align: right;
   direction: rtl;
 }
+
+input {
+  font-family: 'Rubik';
+}

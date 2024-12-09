@@ -5,6 +5,8 @@ import CustomerDetails from "../components/CustomerDetails";
 import ActionButton from "../components/ActionButton";
 import AppointmentTable from "../components/AppointmentTable";
 import BlackList from "../components/BlackList";
+import Modal from "../components/Modal";
+import ModalAppointment from "../components/ModalAppointment";
 
 const CustomersPage = () => {
 
@@ -17,7 +19,12 @@ const CustomersPage = () => {
     };
 
     const buttons = ["תור חדש", "מסרון תזכורת", "עדכון פרטים", "הצהרות והסכמים", "חסימת לקוחה", "מחיקת לקוחה"];
-    const appointments = [];
+
+        // CHECK
+        const [isModalOpen, setIsModalOpen] = useState(false);
+        const openModal = () => setIsModalOpen(true);
+        const closeModal = () => setIsModalOpen(false);
+        // END ECHECK
 
     return (
         <div className="customers-page">
@@ -34,7 +41,12 @@ const CustomersPage = () => {
             </div>
 
             <h2 className="new-section">תורים</h2>
-            <AppointmentTable appointments={appointments}/>
+            <AppointmentTable/>
+
+            <button onClick={openModal}>Open Popup</button>
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <ModalAppointment/>
+            </Modal>
 
         </div>
     );
