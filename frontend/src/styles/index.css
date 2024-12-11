@@ -1,3 +1,7 @@
+.app {
+  padding-bottom: 50px;
+}
+
 body {
   margin: 0;
   font-family: 'Rubik' ,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

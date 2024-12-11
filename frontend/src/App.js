@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles/index.css"
 import Header from "./components/Header";
 import CustomersPage from "./pages/CustomersPage";
+import Footer from "./components/Footer";
 
 const App = () => {
 
@@ -30,9 +31,11 @@ const App = () => {
             };
             
             return (
-              <div>
+
+              <div className="app">
                 <Header menuTabs={menuTabs} onTabClick={setCurrentPage} activeTab={currentPage}/>
                 <main>{renderPage()}</main>
+                <Footer/>
               </div>
   );
 };
