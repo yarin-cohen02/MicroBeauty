@@ -4,12 +4,14 @@ import CustomerSearch from "../components/CustomerSearch";
 import CustomerDetails from "../components/CustomerDetails";
 import ActionButton from "../components/ActionButton";
 import AppointmentTable from "../components/AppointmentTable";
+// eslint-disable-next-line
 import BlackList from "../components/BlackList";
 import Modal from "../components/Modal";
 import ModalAppointment from "../components/ModalAppointment";
 
 const CustomersPage = () => {
 
+    // eslint-disable-next-line
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleSearch = (value) => {
