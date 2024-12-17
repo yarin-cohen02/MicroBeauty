@@ -2,7 +2,7 @@
 .header {
     text-align: right;
     background: rgb(219,210,210);
-    background: linear-gradient(48deg, rgba(219,210,210,1) 0%, rgba(162,155,155,1) 100%);
+    background: linear-gradient(48deg, var(--color-2) 0%, var(--color-1) 100%);
     padding: 10px 50px 0 50px;
     font-weight: 900;
     font-size: 14px;
@@ -18,7 +18,7 @@
   }
   
   .nav-item {
-    background-color: rgb(217, 217, 217);
+    background-color: var(--color-2);
     width: 170px;
     padding: 5px;
     color: #fff;
@@ -33,7 +33,7 @@
   
   .nav-item.active {
     background-color: white; 
-    color: rgb(181, 178, 178); 
+    color: var(--color-1); 
   }
 
   .menu-icon {

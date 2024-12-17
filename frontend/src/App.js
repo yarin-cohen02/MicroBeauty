@@ -3,8 +3,15 @@ import "./styles/index.css"
 import Header from "./components/Header";
 import CustomersPage from "./pages/CustomersPage";
 import Footer from "./components/Footer";
+import config from './config';
 
 const App = () => {
+
+  const root = document.documentElement;
+  root.style.setProperty('--color-1', config.COLOR_1);
+  root.style.setProperty('--color-2', config.COLOR_2);
+  root.style.setProperty('--color-3', config.COLOR_3);
+  root.style.setProperty('--color-4', config.COLOR_4);
 
   const [currentPage, setCurrentPage] = useState("לקוחות");
   

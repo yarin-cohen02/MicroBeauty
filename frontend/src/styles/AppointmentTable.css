@@ -7,12 +7,13 @@
   .appointment-table th, .appointment-table td {
     padding: 5px;
     text-align: center;
-    background-color: #f3f3f3;
+    background-color: var(--color-4);
     border-radius: 3px;
   }
   
   .appointment-table th {
     font-weight: bold;
+    background-color: var(--color-3);
   }
   
   .apt-button {
@@ -20,7 +21,7 @@
     border: none;
     cursor: pointer;
     border-radius: 3px;
-    background-color: rgb(166, 166, 166);
+    background-color: var(--color-1);
     color: white;
     font-family: 'Rubik';
   }
