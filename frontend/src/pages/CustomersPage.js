@@ -9,7 +9,6 @@ import AppointmentTable from "../components/AppointmentTable";
 // import ModalAppointment from "../components/ModalAppointment";
 
 const CustomersPage = () => {
-
   const [selectedCustomer, setSelectedCustomer] = useState(null);
 
   // Handler for when a customer is selected
@@ -34,7 +33,6 @@ const CustomersPage = () => {
 
   return (
     <div className="customers-page">
-
       <CustomerSearch
         placeholder="חפש לפי שם מלא / מספר טלפון / תעודת זהות / הערה חופשית"
         onSelectCustomer={handleCustomerSelect}
