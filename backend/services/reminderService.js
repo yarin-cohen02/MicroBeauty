@@ -1,6 +1,6 @@
 const cron = require('node-cron');
 const { Pool } = require('pg');
-const { sendSms } = require('./smsService'); 
+const { sendSms } = require('./twilioService'); 
 
 const pool = new Pool({
   user: 'your_db_user',
