@@ -2,7 +2,12 @@ import React from "react";
 import "../styles/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHome, faUser, faEnvelope, faCog } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faUser,
+  faEnvelope,
+  faCog,
+} from "@fortawesome/free-solid-svg-icons";
 
 library.add(faHome, faUser, faEnvelope, faCog);
 

@@ -31,7 +31,7 @@ const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/customers?query=${searchTerm}`
+        `http://localhost:5001/api/customers?query=${searchTerm}`,
       );
       setSuggestions(response.data.customers || []);
       setShowSuggestions(true);

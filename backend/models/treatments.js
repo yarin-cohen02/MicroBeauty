@@ -27,6 +27,6 @@ module.exports = function (sequelize, DataTypes) {
           fields: [{ name: "treatment_type_id" }],
         },
       ],
-    }
+    },
   );
 };

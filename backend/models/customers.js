@@ -38,16 +38,16 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         validate: {
           isNumeric: {
-            msg: 'Israeli ID must contain only numeric characters.',
+            msg: "Israeli ID must contain only numeric characters.",
           },
           len: {
             args: [9, 9],
-            msg: 'Israeli ID must be exactly 9 digits.',
+            msg: "Israeli ID must be exactly 9 digits.",
           },
           isValidIsraeliId(value) {
             const isValid = validateIsraeliId(value);
             if (!isValid) {
-              throw new Error('Invalid Israeli ID number.');
+              throw new Error("Invalid Israeli ID number.");
             }
           },
         },
@@ -106,7 +106,7 @@ module.exports = function (sequelize, DataTypes) {
           fields: [{ name: "customer_id" }],
         },
       ],
-    }
+    },
   );
 };
 

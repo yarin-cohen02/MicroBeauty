@@ -27,6 +27,6 @@ module.exports = function (sequelize, DataTypes) {
           fields: [{ name: "appointment_type_id" }],
         },
       ],
-    }
+    },
   );
 };

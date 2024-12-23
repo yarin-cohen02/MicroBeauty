@@ -1,17 +1,17 @@
-const cron = require('node-cron');
-const { Pool } = require('pg');
-const { sendSms } = require('./twilioService'); 
+const cron = require("node-cron");
+const { Pool } = require("pg");
+const { sendSms } = require("./twilioService");
 
 const pool = new Pool({
-  user: 'your_db_user',
-  host: 'your_db_host',
-  database: 'your_db_name',
-  password: 'your_db_password',
+  user: "your_db_user",
+  host: "your_db_host",
+  database: "your_db_name",
+  password: "your_db_password",
   port: 5432,
 });
 
 // Cron job: Runs daily at 8 AM
-cron.schedule('0 8 * * *', async () => {
+cron.schedule("0 8 * * *", async () => {
   try {
     const query = `
       SELECT appointment_id, customer_name, customer_phone, appointment_date
@@ -30,12 +30,12 @@ cron.schedule('0 8 * * *', async () => {
       // Mark reminder as sent
       await pool.query(
         `UPDATE appointments SET reminder_sent = true WHERE appointment_id = $1`,
-        [appointment.appointment_id]
+        [appointment.appointment_id],
       );
     }
 
-    console.log('Reminders sent successfully!');
+    console.log("Reminders sent successfully!");
   } catch (error) {
-    console.error('Error sending reminders:', error);
+    console.error("Error sending reminders:", error);
   }
 });

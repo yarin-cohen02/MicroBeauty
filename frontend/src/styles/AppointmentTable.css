@@ -1,29 +1,29 @@
 .appointment-table {
-    width: 100%;
-    table-layout: fixed;
-    border-spacing: 10px;
-  }
-  
-  .appointment-table th, .appointment-table td {
-    padding: 5px;
-    text-align: center;
-    background-color: var(--color-4);
-    border-radius: 3px;
-  }
-  
-  .appointment-table th {
-    font-weight: bold;
-    background-color: var(--color-3);
-    color: var(--color-2);
-  }
-  
-  .apt-button {
-    margin: 0 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    background-color: var(--color-3);
-    color: var(--color-2);
-    font-family: 'Rubik';
-  }
-  
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px;
+}
+
+.appointment-table th,
+.appointment-table td {
+  padding: 5px;
+  text-align: center;
+  background-color: var(--color-4);
+  border-radius: 3px;
+}
+
+.appointment-table th {
+  font-weight: bold;
+  background-color: var(--color-3);
+  color: var(--color-2);
+}
+
+.apt-button {
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: var(--color-3);
+  color: var(--color-2);
+  font-family: "Rubik";
+}

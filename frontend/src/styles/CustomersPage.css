@@ -1,15 +1,15 @@
 .customers-page {
-    padding: 40px 50px;
-    color: rgb(127, 127, 127);
+  padding: 40px 50px;
+  color: rgb(127, 127, 127);
 }
 
 .new-section {
-    margin: 40px 0 10px 15px;
-    font-size: 17px;
-    display: inline-block;
+  margin: 40px 0 10px 15px;
+  font-size: 17px;
+  display: inline-block;
 }
 
 .btns-container {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }

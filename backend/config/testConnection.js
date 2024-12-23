@@ -1,5 +1,5 @@
 const sequelize = require("../utils/sequelize");
-require('dotenv').config();
+require("dotenv").config();
 
 const testConnection = async () => {
   try {

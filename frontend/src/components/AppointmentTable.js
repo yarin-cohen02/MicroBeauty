@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/AppointmentTable.css";
 
 const AppointmentTable = () => {
-
   const appointments = [
     {
       date: "21.08.24",
@@ -41,11 +40,10 @@ const AppointmentTable = () => {
       payMethod: "אשראי",
       payments: "2 תשלומים",
     },
-  ];  
-  
+  ];
 
-    return (
-        <table className="appointment-table">
+  return (
+    <table className="appointment-table">
       <thead>
         <tr>
           <th>תאריך</th>
@@ -60,7 +58,6 @@ const AppointmentTable = () => {
         </tr>
       </thead>
       <tbody>
-        
         {appointments.map((appointment, index) => (
           <tr key={index}>
             <td>{appointment.date}</td>
@@ -79,7 +76,7 @@ const AppointmentTable = () => {
         ))}
       </tbody>
     </table>
-    );
+  );
 };
 
 export default AppointmentTable;

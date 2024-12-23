@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 // const { sendSms } = require("./smsService");
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
 

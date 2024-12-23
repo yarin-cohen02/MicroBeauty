@@ -95,6 +95,6 @@ module.exports = function (sequelize, DataTypes) {
           fields: [{ name: "contract_id" }],
         },
       ],
-    }
+    },
   );
 };

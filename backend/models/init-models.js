@@ -8,7 +8,6 @@ var _sources = require("./sources");
 var _treatments = require("./treatments");
 
 function initModels(sequelize) {
-  
   var appointment_types = _appointment_types(sequelize, DataTypes);
   var appointments = _appointments(sequelize, DataTypes);
   var cities = _cities(sequelize, DataTypes);

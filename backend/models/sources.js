@@ -27,6 +27,6 @@ module.exports = function (sequelize, DataTypes) {
           fields: [{ name: "source_id" }],
         },
       ],
-    }
+    },
   );
 };
