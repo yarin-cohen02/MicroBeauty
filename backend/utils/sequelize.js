@@ -1,6 +1,5 @@
 const { Sequelize } = require("sequelize");
 const sequelizeConfig = require("../config/sequelizeConfig");
-require("dotenv").config();
 
 // Determine the environment (default to development)
 const env = process.env.NODE_ENV || "development";
