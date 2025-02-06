@@ -1,6 +1,7 @@
 const app = require("./app");
 const sequelize = require("./utils/sequelize");
 
+
 require("./services/reminderService");
 const PORT = 5001;
 

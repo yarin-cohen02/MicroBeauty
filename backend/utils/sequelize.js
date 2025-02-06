@@ -13,7 +13,7 @@ const sequelize = new Sequelize(
   {
     host: config.host,
     port: config.port,
-    dialect: config.dialect,
+    dialect: config.dialect || "postgres",
     logging: config.logging || console.log, // Enable logging (can be disabled in production)
   },
 );
