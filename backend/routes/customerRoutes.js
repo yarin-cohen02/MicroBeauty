@@ -3,7 +3,6 @@ const customerController = require("../controllers/customerController");
 
 const router = express.Router();
 
-// Routes
 router.get("/", customerController.getCustomersByQuery); // Example: GET /customers?query=John
 router.get("/:id", customerController.getCustomerById); // Example: GET /customers/123
 router.post("/", customerController.createCustomer);

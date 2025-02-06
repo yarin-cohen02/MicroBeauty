@@ -1,4 +1,4 @@
-const { Op, Sequelize } = require("sequelize"); // Ensure Sequelize is imported
+const { Op, Sequelize } = require("sequelize"); 
 const customers = require("../models/customers");
 
 exports.getCustomersByQuery = async (query) => {
@@ -41,8 +41,8 @@ exports.getCustomersByQuery = async (query) => {
   }
 };
 
-exports.getCustomerById = (id) => {
-  return customers.findByPk(id);
+exports.getCustomerById = async (id) => {
+  return await customers.findOne({ where: { customer_id: Number(id) } });
 };
 
 exports.createCustomer = (customer) => {

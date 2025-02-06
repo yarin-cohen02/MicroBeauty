@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 
-module.exports = function (sequelize, DataTypes) {
-  return sequelize.define(
-    "customers",
+module.exports = (sequelize, DataTypes) => {
+  const Customer = sequelize.define(
+    "customers", // This is the model name (table name is pluralized by default)
     {
       customer_id: {
         autoIncrement: true,
@@ -106,10 +106,13 @@ module.exports = function (sequelize, DataTypes) {
           fields: [{ name: "customer_id" }],
         },
       ],
-    },
+    }
   );
+
+  return Customer; // Ensure you return the model here
 };
 
+// Helper function for validating Israeli ID
 function validateIsraeliId(id) {
   // Ensure the ID is 9 digits
   if (!/^\d{9}$/.test(id)) return false;
