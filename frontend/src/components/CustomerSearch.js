@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
+
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -77,7 +78,7 @@ const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
               onClick={() => handleSelect(customer)}
               className="suggestion-item"
             >
-              {customer.fullName} - {customer.phone}
+              {customer.first_name} {customer.last_name} - {customer.mobile_number}
             </li>
           ))}
         </ul>
