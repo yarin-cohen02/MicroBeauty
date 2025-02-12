@@ -59,7 +59,7 @@ const CustomerDetails = (customer) => {
         </div>
         <div className="details-row">
           <div className="details-label">הסכמה לדיוור</div>
-          <div className="details-value">{data.agreed_ads}</div>
+          <div className="details-value">{data.agreed_ads ? "V" : "X"}</div>
         </div>
         <div className="details-row">
           <div className="details-label">הערה חופשית</div>
