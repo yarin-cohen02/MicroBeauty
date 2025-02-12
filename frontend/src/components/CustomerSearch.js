@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../styles/CustomerSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,7 +46,7 @@ const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
 
   const handleSelect = (customer) => {
     onSelectCustomer(customer);
-    setQuery(customer.fullName);
+    setQuery(`${customer.first_name} ${customer.last_name}`);
     setSuggestions([]);
     setShowSuggestions(false);
   };
@@ -78,7 +78,10 @@ const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
               onClick={() => handleSelect(customer)}
               className="suggestion-item"
             >
-              {customer.first_name} {customer.last_name} - {customer.mobile_number}
+              <span className="attribute_name">{customer.first_name} {customer.last_name}</span>
+              <span className="attribute_id">ת״ז: {customer.israeli_id}</span>
+              <span className="attribute_phone">טלפון נייד: {customer.mobile_number}</span>
+              <span className="attribute_notes">{customer.notes}</span>
             </li>
           ))}
         </ul>

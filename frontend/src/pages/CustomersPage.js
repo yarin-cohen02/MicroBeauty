@@ -4,7 +4,7 @@ import CustomerSearch from "../components/CustomerSearch";
 import CustomerDetails from "../components/CustomerDetails";
 import ActionButton from "../components/ActionButton";
 import AppointmentTable from "../components/AppointmentTable";
-// import BlackList from "../components/BlackList";
+import BlackList from "../components/BlackList";
 // import Modal from "../components/Modal";
 // import ModalAppointment from "../components/ModalAppointment";
 
@@ -38,11 +38,13 @@ const CustomersPage = () => {
         onSelectCustomer={handleCustomerSelect}
       />
 
+      {/* {console.log("selectedCustomer", selectedCustomer)} */}
+
       {selectedCustomer && (
         <div className="rest-of-page">
           <h2 className="new-section">פרטים כלליים</h2>
-          {/* <BlackList/> */}
-          <CustomerDetails cusomerId="1" />
+          {selectedCustomer.is_black_list && <BlackList/>}
+          <CustomerDetails customer={selectedCustomer} />
 
           <div className="btns-container">
             {buttons.map((text, index) => (

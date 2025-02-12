@@ -52,7 +52,7 @@
 
 .suggestions-dropdown {
   position: absolute;
-  top: 45px;
+  top: 30px;
   left: 0;
   right: 0;
   background-color: white;
@@ -71,6 +71,23 @@
   cursor: pointer;
   color: #333;
   border-bottom: 1px solid #eee;
+  display: flex;
+}
+
+.attribute_name {
+  width: 800px;
+}
+
+.attribute_id {
+  width: 800px;
+}
+
+.attribute_phone {
+  width: 1000px;
+}
+
+.attribute_notes {
+  width: 2000px;
 }
 
 .suggestion-item:hover {
