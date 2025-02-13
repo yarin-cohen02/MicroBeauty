@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/CustomersPage.css";
+import axios from "axios";
 import CustomerSearch from "../components/CustomerSearch";
 import CustomerDetails from "../components/CustomerDetails";
 import ActionButton from "../components/ActionButton";
@@ -9,11 +10,15 @@ import BlackList from "../components/BlackList";
 // import ModalAppointment from "../components/ModalAppointment";
 
 const CustomersPage = () => {
+
   const [selectedCustomer, setSelectedCustomer] = useState(null);
+  const [appointments, setAppointments] = useState([]);
 
   // Handler for when a customer is selected
   const handleCustomerSelect = (customerData) => {
-    setSelectedCustomer(customerData); // Set the selected customer data
+    setSelectedCustomer(customerData);
+    fetchAppointments(customerData.customer_id);
+    // console.log("customerData", customerData);
   };
 
   const buttons = [
@@ -30,6 +35,17 @@ const CustomersPage = () => {
   // const openModal = () => setIsModalOpen(true);
   // const closeModal = () => setIsModalOpen(false);
   // END ECHECK
+
+  const fetchAppointments = async (customerId) => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5001/api/appointments/${customerId}`,
+        );
+        setAppointments(response.data.appointments || []);
+      } catch (error) {
+        console.error("Error fetching appointments:", error);
+        setAppointments([]);
+    }};
 
   return (
     <div className="customers-page">
@@ -53,7 +69,7 @@ const CustomersPage = () => {
           </div>
 
           <h2 className="new-section">תורים</h2>
-          <AppointmentTable />
+          <AppointmentTable appointments={appointments}/>
 
           {/* <button onClick={openModal}>Open Popup</button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
