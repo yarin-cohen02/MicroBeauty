@@ -18,6 +18,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
+      date_of_birth: {
+        type: DataTypes.DATEONLY,
+        allowNull: false,
+        validate: {
+          isDate: {
+            msg: "Date of birth must be a valid date.",
+          },
+        },
+      },
       mobile_number: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -109,20 +118,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  return Customer; // Ensure you return the model here
+  return Customer;
 };
 
 // Helper function for validating Israeli ID
 function validateIsraeliId(id) {
-  // Ensure the ID is 9 digits
   if (!/^\d{9}$/.test(id)) return false;
 
-  // Checksum validation
   let sum = 0;
   for (let i = 0; i < 9; i++) {
-    let num = parseInt(id[i], 10) * ((i % 2) + 1); // Multiply each digit alternately by 1 or 2
-    if (num > 9) num -= 9; // Subtract 9 from numbers greater than 9
+    let num = parseInt(id[i], 10) * ((i % 2) + 1);
+    if (num > 9) num -= 9;
     sum += num;
   }
-  return sum % 10 === 0; // Valid if the sum is divisible by 10
+  return sum % 10 === 0;
 }

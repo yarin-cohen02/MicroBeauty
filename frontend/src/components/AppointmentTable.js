@@ -69,7 +69,7 @@ const AppointmentTable = (appointments) => {
             <td>{appointment.time}</td>
             <td>{appointment.appointment_type_id}</td>
             <td>{appointment.treatmentType}</td>
-            <td>{appointment.arrived}</td>
+            <td>{appointment.arrived ? "הגיעה" : "לא הגיעה"}</td>
             <td>{appointment.price_for_appointment}</td>
             <td>{appointment.payMethod}</td>
             <td>{appointment.payments}</td>

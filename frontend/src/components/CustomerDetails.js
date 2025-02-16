@@ -40,7 +40,7 @@ const CustomerDetails = (customer) => {
       <div className="details-column">
         <div className="details-row">
           <div className="details-label">תאריך לידה</div>
-          <div className="details-value">{data.birthDate}</div>
+          <div className="details-value">{data.date_of_birth}</div>
         </div>
         <div className="details-row">
           <div className="details-label">עיר מגורים</div>
