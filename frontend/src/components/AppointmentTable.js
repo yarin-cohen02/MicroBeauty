@@ -70,7 +70,8 @@ const AppointmentTable = (appointments) => {
             <td>{appointment.type_name}</td>
             <td>{appointment.treatment_name}</td>
             <td>{appointment.arrived ? "הגיעה" : "לא הגיעה"}</td>
-            <td>{appointment.price_for_appointment}</td>
+            <td>{appointment.price_for_appointment == 0 ? "" : 
+              new Intl.NumberFormat().format(appointment.price_for_appointment)}</td>
             <td>{appointment.pay_method}</td>
             <td>{appointment.payments_amount}</td>
             <td>

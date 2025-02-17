@@ -18,7 +18,7 @@ const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
     setQuery(value);
     clearTimeout(debounceTimer);
 
-    if (value.trim() !== "") {
+    if (value.trim().length >= 3) {
       debounceTimer = setTimeout(() => {
         fetchSuggestions(value);
       }, 300); // 300ms debounce time
