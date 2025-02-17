@@ -65,14 +65,14 @@ const AppointmentTable = (appointments) => {
       <tbody>
         {data.map((appointment, index) => (
           <tr key={index}>
+            <td>{appointment.appointment_date}</td>
             <td>{appointment.appointment_time}</td>
-            <td>{appointment.time}</td>
-            <td>{appointment.appointment_type_id}</td>
-            <td>{appointment.treatmentType}</td>
+            <td>{appointment.type_name}</td>
+            <td>{appointment.treatment_name}</td>
             <td>{appointment.arrived ? "הגיעה" : "לא הגיעה"}</td>
             <td>{appointment.price_for_appointment}</td>
-            <td>{appointment.payMethod}</td>
-            <td>{appointment.payments}</td>
+            <td>{appointment.pay_method}</td>
+            <td>{appointment.payments_amount}</td>
             <td>
               <button className="apt-button">ערוך</button>
               <button className="apt-button">מחק</button>

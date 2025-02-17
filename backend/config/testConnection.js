@@ -11,5 +11,3 @@ const testConnection = async () => {
     await sequelize.close(); // Close the connection after testing
   }
 };
-
-testConnection();
