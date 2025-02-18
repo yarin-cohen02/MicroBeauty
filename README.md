@@ -1,3 +1,1 @@
-Hello!
-
-This is a managment system developed for IDITbeauty - Still IN PROCCESS!
+![Uploading Kapture 2025-02-18 at 19.05.10.gif…]()
