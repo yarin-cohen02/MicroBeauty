@@ -8,7 +8,14 @@ This system is still in developing process. **Stay tuned!**
 
 ## What is this system?!
 
+- s
+- s
+
 ## Technologies
+
+### Backend
+
+### Frontend
 
 ## Functionalities
 
