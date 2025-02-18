@@ -1,48 +1,66 @@
 const { Op, Sequelize } = require("sequelize"); 
 const { customers } = require("../models/sequelize");
+const pool = require('../config/poolConfig');
 
-exports.getCustomersByQuery = async (query) => {
-  try {
-    const result = await customers.findAll({
-      where: {
-        [Op.or]: [
-          // Search in first name
-          { first_name: { [Op.iLike]: `%${query}%` } },
-          // Search in last name
-          { last_name: { [Op.iLike]: `%${query}%` } },
-          // Search in mobile number (handle "054" -> "+97254")
-          {
-            mobile_number: {
-              [Op.iLike]: `%${query.replace(/^0/, "+972")}%`,
-            },
-          },
-          // Search in full name (concatenate first and last names)
-          Sequelize.where(
-            Sequelize.fn(
-              "concat",
-              Sequelize.col("first_name"),
-              " ",
-              Sequelize.col("last_name")
-            ),
-            {
-              [Op.iLike]: `%${query}%`,
-            }
-          ),
-          // Search in notes
-          { notes: { [Op.iLike]: `%${query}%` } },
-        ],
-      },
-    });
-
-    return result; // Return the result to the controller
-  } catch (error) {
-    console.error("Error querying customers:", error);
-    throw error; // Throw the error to be handled by the controller
-  }
+exports.getCustomersByQuery = async (searchTerm) => {
+  const query = `
+    SELECT
+      customer_id,
+      first_name,
+      last_name,
+      israeli_id,
+	    mobile_number,
+	    TO_CHAR(date_of_birth, 'DD.MM.YYYY') AS date_of_birth,
+	    EXTRACT(YEAR FROM AGE(NOW(), date_of_birth)) || '.' || EXTRACT(MONTH FROM AGE(NOW(), date_of_birth)) AS age,
+	    cities.city_name,
+	    needle_and_color,
+	    sources.source_name,
+	    agreed_ads,
+	    notes
+    FROM
+	    customers
+    JOIN
+	    cities ON customers.city_id = cities.city_id
+    JOIN
+	    sources ON customers.source_id = sources.source_id
+    WHERE
+      first_name || ' ' || last_name LIKE '%' || $1 || '%'
+      OR israeli_id LIKE '%' || $1 || '%'
+      OR mobile_number LIKE '%' || $1 || '%'
+      OR notes LIKE '%' || $1 || '%';
+  `;
+  const values = [searchTerm];
+  const result = await pool.query(query, values);
+  return result.rows;
 };
 
 exports.getCustomerById = async (id) => {
-  return await customers.findOne({ where: { customer_id: Number(id) } });
+  const query = `
+    SELECT
+      customer_id,
+      first_name,
+      last_name,
+      israeli_id,
+	    mobile_number,
+	    TO_CHAR(date_of_birth, 'DD.MM.YYYY') AS date_of_birth,
+	    EXTRACT(YEAR FROM AGE(NOW(), date_of_birth)) || '.' || EXTRACT(MONTH FROM AGE(NOW(), date_of_birth)) AS age,
+	    cities.city_name,
+	    needle_and_color,
+	    sources.source_name,
+	    agreed_ads,
+	    notes
+    FROM
+	    customers
+    LEFT JOIN
+	    cities ON customers.city_id = cities.city_id
+    LEFT JOIN
+	    sources ON customers.source_id = sources.source_id
+    WHERE
+	    customer_id = $1;
+  `;
+  const values = [id];
+  const result = await pool.query(query, values);
+  return result.rows;
 };
 
 exports.createCustomer = (customer) => {

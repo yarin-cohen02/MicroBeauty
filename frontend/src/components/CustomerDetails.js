@@ -7,10 +7,10 @@ const CustomerDetails = (customer) => {
   //   last_name: "לוי",
   //   israeli_id: "032056874",
   //   mobile_number: "054-2444987",
-  //   birthDate: "02.02.1970 (33.10)",  //COMPLETE IN DB + CALCULATE AGE
-  //   city_id: "חולון",                 //MAKE JOIN WITH CITIES TABLE
+  //   birthDate: "02.02.1970 (33.10)", 
+  //   city_id: "חולון",                 
   //   needle_and_color: "B2 כחול", 
-  //   source_id: "רשתות חברתיות",       //MAKE JOIN WITH SOURCES TABLE
+  //   source_id: "רשתות חברתיות",      
   //   agreed_ads: "V",
   //   notes: "חברה של אוסי",
   // };
@@ -40,11 +40,11 @@ const CustomerDetails = (customer) => {
       <div className="details-column">
         <div className="details-row">
           <div className="details-label">תאריך לידה</div>
-          <div className="details-value">{data.date_of_birth}</div>
+          <div className="details-value">{data.date_of_birth} ({data.age})</div>
         </div>
         <div className="details-row">
           <div className="details-label">עיר מגורים</div>
-          <div className="details-value">{data.city_id}</div>
+          <div className="details-value">{data.city_name}</div>
         </div>
         <div className="details-row">
           <div className="details-label">מחט וצבע</div>
@@ -55,7 +55,7 @@ const CustomerDetails = (customer) => {
       <div className="details-column">
         <div className="details-row">
           <div className="details-label">מקור הגעה</div>
-          <div className="details-value">{data.source_id}</div>
+          <div className="details-value">{data.source_name}</div>
         </div>
         <div className="details-row">
           <div className="details-label">הסכמה לדיוור</div>

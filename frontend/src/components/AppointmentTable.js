@@ -63,15 +63,15 @@ const AppointmentTable = (appointments) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((appointment, index) => (
-          <tr key={index}>
+        {data.map((appointment) => (
+          <tr key={appointment.appointment_id}>
             <td>{appointment.appointment_date}</td>
             <td>{appointment.appointment_time}</td>
             <td>{appointment.type_name}</td>
             <td>{appointment.treatment_name}</td>
             <td>{appointment.arrived ? "הגיעה" : "לא הגיעה"}</td>
             <td>{appointment.price_for_appointment == 0 ? "" : 
-              new Intl.NumberFormat().format(appointment.price_for_appointment)}</td>
+              `${new Intl.NumberFormat().format(appointment.price_for_appointment)} ש״ח`}</td>
             <td>{appointment.pay_method}</td>
             <td>{appointment.payments_amount}</td>
             <td>

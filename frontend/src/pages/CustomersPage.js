@@ -64,7 +64,7 @@ const CustomersPage = () => {
 
           <div className="btns-container">
             {buttons.map((text, index) => (
-              <ActionButton text={text} />
+              <ActionButton key={index} text={text} />
             ))}
           </div>
 

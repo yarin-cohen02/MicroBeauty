@@ -6,6 +6,7 @@ const pool = require('../config/poolConfig');
 exports.getAppointmentsByCustomerId = async (id) => {
   const query = `
     SELECT 
+      appointment_id,
       TO_CHAR(a.appointment_time, 'DD.MM.YY') AS appointment_date,
       TO_CHAR(a.appointment_time, 'HH24:MI') AS appointment_time,
       at.type_name,
@@ -16,11 +17,11 @@ exports.getAppointmentsByCustomerId = async (id) => {
       TO_CHAR(a.payments_amount, '9999999999') AS payments_amount
     FROM 
       appointments a
-    JOIN 
+    LEFT JOIN 
       appointment_types at ON a.appointment_type_id = at.appointment_type_id
-    JOIN 
+    LEFT JOIN 
       treatments t ON a.treatment_type_id = t.treatment_type_id
-    JOIN 
+    LEFT JOIN 
       pay_methods pm ON a.pay_method_id = pm.id
     WHERE 
       a.customer_id = $1
