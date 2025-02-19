@@ -52,6 +52,18 @@ The **Customers Management System** is designed to help small businesses **manag
 
 ---
 
+## 📸 Screenshots  
+
+s
+
+---
+
+## 📐 DB Structure  
+
+s
+
+---
+
 ## 📬 Contact Me  
 
 **Yarin Cohen**  
