@@ -19,14 +19,13 @@ This system is still in developing process. **Stay tuned!**
 
 ### Backend
 
-node.js
+![image](https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221)
 
-Twilio
-
+![image](https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89)
 
 ### Frontend
 
-React.js
+![image](https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af)
 
 ## Functionalities
 
