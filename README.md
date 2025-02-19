@@ -15,17 +15,17 @@ This system is still in developing process. **Stay tuned!**
 - s
 - s
 
-## Technologies
+## 🚀 Technologies
 
-### Backend
+### 🛠 Backend
 
-![image](https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221)
+![Node.js](https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221)
 
-![image](https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89)
+![Twilio](https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89)
 
-### Frontend
+### 🎨 Frontend
 
-![image](https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af)
+![React.js](https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af)
 
 ## Functionalities
 
