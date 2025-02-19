@@ -35,8 +35,11 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
 
 ## ⚡ Functionalities  
 
-✔ **x**  
-✔ **s**  
+✔ **Manage your customers data**  
+✔ **Set new appointments to customers**
+✔ **Send SMS messages to your customers - Reminders for appoointments, promotional messages, birthday messages etc.**
+✔ **View visual graphs about your business, transactions and customers - Get business insights**
+✔ **Generate reports on your customers and transactions**
 
 ## 📬 Contact Me  
 
