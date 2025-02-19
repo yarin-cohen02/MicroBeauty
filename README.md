@@ -60,7 +60,7 @@ s
 
 ## 📐 DB Structure  
 
-![image](https://github.com/user-attachments/assets/1abb25ac-1706-45d8-83f3-2088fa7a9c33)
+![image](https://github.com/user-attachments/assets/46d911c7-efac-4f2b-8817-5934f16af4f8)
 
 ---
 
