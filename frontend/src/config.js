@@ -1,5 +1,5 @@
 const config = {
-  API_BASE_URL: "http://localhost:5001",
+  API_BASE_URL: "http://192.168.1.173:5001",
 
   COLOR_1: "#112D4E", // Header, Buttons
   COLOR_2: "#3F72AF", // Header
