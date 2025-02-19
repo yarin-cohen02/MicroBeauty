@@ -3,7 +3,7 @@
 Welcome to the **Customers Management System** – a powerful tool designed for small businesses, developed for **IDITmicroBeauty LTD**.  
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/494a3f77-e6e2-4eaf-bd3a-da24f03b4770" alt="System Preview" width="80%">
+  <img src="https://github.com/user-attachments/assets/494a3f77-e6e2-4eaf-bd3a-da24f03b4770" alt="System Preview"">
 </p>
 
 🚧 **This system is still in development.** **Stay tuned for updates!** 🚀  
