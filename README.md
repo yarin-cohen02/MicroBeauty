@@ -60,7 +60,8 @@ s
 
 ## 📐 DB Structure  
 
-s
+![Untitled](https://github.com/user-attachments/assets/631e05f8-1249-4abb-9fc2-4c4d441dac2d)
+
 
 ---
 
