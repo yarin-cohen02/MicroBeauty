@@ -8,20 +8,14 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
 
 🚧 **This system is still in development.** **Stay tuned for updates!** 🚀  
 
----
-
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=F70000&width=435&lines=Hey%2C+I'm+Yarin!;Welcome+to+my+GitHub!" alt="Typing Animation">
 </p>
-
----
 
 ## ❓ What is this system?  
 
 ✅ **s**  
 ✅ **s**  
-
----
 
 ## 🚀 Technologies  
 
@@ -39,14 +33,10 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
   <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" height="80"> 
 </p>
 
----
-
 ## ⚡ Functionalities  
 
 ✔ **x**  
 ✔ **s**  
-
----
 
 ## 📬 Contact Me  
 
