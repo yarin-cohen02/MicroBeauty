@@ -19,16 +19,11 @@ This system is still in developing process. **Stay tuned!**
 
 ### 🛠 Backend
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221" alt="Node.js" height="80"> &nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89" alt="Twilio" height="80"> 
-</p>
+<p align="center" style="background: linear-gradient(90deg, #00c6ff, #0072ff); padding: 20px; border-radius: 10px;"> <img src="https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221" alt="Node.js" height="80" style="filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));"> &nbsp;&nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89" alt="Twilio" height="80" style="filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));"> </p>
 
 ### 🎨 Frontend
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" height="80">
-</p>
+<p align="center" style="background: linear-gradient(90deg, #ff9a9e, #fad0c4); padding: 20px; border-radius: 10px;"> <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" height="80" style="filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));"> </p>
 
 ## Functionalities
 
