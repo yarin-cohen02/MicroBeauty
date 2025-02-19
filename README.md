@@ -19,13 +19,11 @@ This system is still in developing process. **Stay tuned!**
 
 ### 🛠 Backend
 
-![Node.js](https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221)
-
-![Twilio](https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89)
+<p align="center"> <img src="https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221" alt="Node.js" width="120"> &nbsp;&nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89" alt="Twilio" width="120"> </p>
 
 ### 🎨 Frontend
 
-![React.js](https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af)
+<p align="center"> <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" width="120"> </p>
 
 ## Functionalities
 
