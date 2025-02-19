@@ -22,9 +22,9 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
 ### 🛠 Backend  
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c529b099-56a7-4837-a8d2-dfb298078221" alt="Node.js" height="80">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/d8616983-b21f-4fba-87cd-ff3920d7eae9" alt="Postgres" height="80"> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/e67cff2a-2318-4bac-bad6-3ba8097a8e89" alt="Twilio" height="80"> 
 </p>
 
