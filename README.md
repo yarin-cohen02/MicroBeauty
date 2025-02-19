@@ -50,17 +50,6 @@ The **Customers Management System** is designed to help small businesses **manag
 ✅ **📊 Business Insights & Analytics** – View visual graphs and trends about transactions and customer behavior.  
 ✅ **📜 Report Generation** – Generate reports on customers and transactions for better business insights.  
 
----
-
-## 📸 Screenshots  
-
-s
-
----
-
-## 📐 DB Structure  
-
-![image](https://github.com/user-attachments/assets/46d911c7-efac-4f2b-8817-5934f16af4f8)
 
 ---
 
