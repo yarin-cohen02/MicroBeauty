@@ -26,7 +26,9 @@ This system is still in developing process. **Stay tuned!**
 
 ### 🎨 Frontend
 
-<p align="center"> <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" width="120"> </p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" height="80">
+</p>
 
 ## Functionalities
 
