@@ -12,8 +12,14 @@ const sequelize = new Sequelize(
     host: config.host,
     port: config.port,
     dialect: config.dialect || "postgres",
-    logging: config.logging || console.log
-  },
+    logging: config.logging || console.log,
+    dialectOptions: {
+      ssl: {
+        require: true, // Ensure SSL connection
+        rejectUnauthorized: false, // Disable certificate validation (can be true for stricter security)
+      },
+    },
+  }
 );
 
 module.exports = sequelize;
