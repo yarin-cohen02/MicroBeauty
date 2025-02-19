@@ -3,7 +3,7 @@
 Welcome to the **Customers Management System** – a powerful tool designed for small businesses, developed for **IDITmicroBeauty LTD**.  
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/494a3f77-e6e2-4eaf-bd3a-da24f03b4770" alt="System Preview"">
+  <img src="https://github.com/user-attachments/assets/494a3f77-e6e2-4eaf-bd3a-da24f03b4770" alt="System Preview">
 </p>
 
 🚧 **This system is still in development.** **Stay tuned for updates!** 🚀  
@@ -12,12 +12,17 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=F70000&width=435&lines=Hey%2C+I'm+Yarin!;Welcome+to+my+GitHub!" alt="Typing Animation">
 </p>
 
+---
 
 ## ❓ What is this system?  
 
-✅ **s**  
-✅ **s**  
+The **Customers Management System** is designed to help small businesses **manage their customers, appointments, and transactions** efficiently. It simplifies communication, tracks important business data, and provides valuable insights to grow your business.  
 
+🔹 **User-friendly interface** for managing customer data  
+🔹 **Automated appointment reminders & marketing messages**  
+🔹 **Reports & analytics to help businesses grow**  
+
+---
 
 ## 🚀 Technologies  
 
@@ -35,6 +40,7 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
   <img src="https://github.com/user-attachments/assets/85948885-8f45-4083-8c2c-8b0a643e44af" alt="React.js" height="80"> 
 </p>
 
+---
 
 ## ⚡ Functionalities  
 
@@ -43,7 +49,8 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
 ✅ **📩 Automated SMS Reminders** – Send appointment reminders, promotions, and birthday messages via SMS.  
 ✅ **📊 Business Insights & Analytics** – View visual graphs and trends about transactions and customer behavior.  
 ✅ **📜 Report Generation** – Generate reports on customers and transactions for better business insights.  
- 
+
+---
 
 ## 📬 Contact Me  
 
@@ -63,4 +70,3 @@ Welcome to the **Customers Management System** – a powerful tool designed for 
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
 </p>
-
