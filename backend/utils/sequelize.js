@@ -15,8 +15,8 @@ const sequelize = new Sequelize(
     logging: config.logging || console.log,
     dialectOptions: {
       ssl: {
-        require: true, // Ensure SSL connection
-        rejectUnauthorized: false, // Disable certificate validation (can be true for stricter security)
+        require: true, 
+        rejectUnauthorized: false, 
       },
     },
   }

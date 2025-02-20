@@ -5,6 +5,8 @@ import CustomersPage from "./pages/CustomersPage";
 import Footer from "./components/Footer";
 import config from "./config";
 
+// HOMEPAGE
+
 const App = () => {
   const root = document.documentElement;
   root.style.setProperty("--color-1", config.COLOR_1);
