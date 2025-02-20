@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/CustomerSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import config from "../config";
 
 const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
 
@@ -32,7 +33,7 @@ const CustomerSearch = ({ placeholder, onSelectCustomer }) => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/customers?query=${searchTerm}`,
+        `${config.API_BASE_URL}/api/customers?query=${searchTerm}`,
       );
       setSuggestions(response.data.customers || []);
       setShowSuggestions(true);

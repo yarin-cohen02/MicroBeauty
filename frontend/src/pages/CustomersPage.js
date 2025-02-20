@@ -6,6 +6,7 @@ import CustomerDetails from "../components/CustomerDetails";
 import ActionButton from "../components/ActionButton";
 import AppointmentTable from "../components/AppointmentTable";
 import BlackList from "../components/BlackList";
+import config from "../config";
 // import Modal from "../components/Modal";
 // import ModalAppointment from "../components/ModalAppointment";
 
@@ -39,7 +40,7 @@ const CustomersPage = () => {
   const fetchAppointments = async (customerId) => {
       try {
         const response = await axios.get(
-          `http://localhost:5001/api/appointments/${customerId}`,
+          `${config.API_BASE_URL}/api/appointments/${customerId}`,
         );
         setAppointments(response.data.appointments || []);
       } catch (error) {

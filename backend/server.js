@@ -3,7 +3,7 @@ const sequelize = require("./utils/sequelize");
 
 
 require("./services/reminderService");
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 sequelize
   .authenticate()

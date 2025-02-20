@@ -1,5 +1,5 @@
 const config = {
-  API_BASE_URL: "http://192.168.1.173:5001",
+  API_BASE_URL: "https://idit-micro-beauty-6bcc2963a5b8.herokuapp.com",
 
   COLOR_1: "#112D4E", // Header, Buttons
   COLOR_2: "#3F72AF", // Header
