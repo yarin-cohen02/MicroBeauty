@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import CustomersPage from "./pages/CustomersPage";
 import Footer from "./components/Footer";
 import config from "./config";
+import ModalConnection from "./components/ModalConnection";
 
 // HOMEPAGE
 
@@ -40,6 +41,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <ModalConnection />
       <Header
         menuTabs={menuTabs}
         onTabClick={setCurrentPage}
