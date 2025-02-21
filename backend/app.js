@@ -5,7 +5,6 @@ const customersRoutes = require("./routes/customerRoutes");
 const appointmentsRoutes = require("./routes/appointmentsRoutes");
 
 const sequelize = require("./models/sequelize");
-
 const app = express();
 
 app.use(cors());
