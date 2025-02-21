@@ -7,7 +7,9 @@ const appointmentsRoutes = require("./routes/appointmentsRoutes");
 const sequelize = require("./models/sequelize");
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // FOR UptimeRobot - STAY AWAKE FOR RENDER
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
