@@ -13,19 +13,30 @@ const ModalConnection = () => {
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
 
-    // MAKE A PING
+    // Ping the backend with a timeout
     const pingBackend = async () => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000); // Timeout after 5s
+
       try {
-        const response = await fetch(`${config.API_BASE_URL}/health`, { method: "GET" });
+        const response = await fetch(`${config.API_BASE_URL}/health`, { 
+          method: "GET", 
+          signal: controller.signal 
+        });
+
+        clearTimeout(timeout);
         if (!response.ok) throw new Error("Backend is down");
-        setBackendDown(false); 
+        setBackendDown(false);
       } catch (error) {
-        setBackendDown(true); 
+        if (error.name === "AbortError") {
+          console.warn("Ping request timed out");
+        }
+        setBackendDown(true);
       }
     };
 
-    const interval = setInterval(pingBackend, 5000); // EVERY 5 SECS
-    pingBackend(); // FIRST TIME
+    const interval = setInterval(pingBackend, 5000); // Ping every 5 seconds
+    pingBackend(); // First-time check
 
     return () => {
       window.removeEventListener("online", handleOnline);
