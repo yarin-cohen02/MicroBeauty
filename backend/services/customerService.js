@@ -8,7 +8,7 @@ exports.getCustomersByQuery = async (searchTerm) => {
       customer_id,
       first_name,
       last_name,
-      israeli_id,
+      LPAD(israeli_id::TEXT, 9, '0') AS israeli_id,
 	    mobile_number,
 	    TO_CHAR(date_of_birth, 'DD.MM.YYYY') AS date_of_birth,
 	    EXTRACT(YEAR FROM AGE(NOW(), date_of_birth)) || '.' || EXTRACT(MONTH FROM AGE(NOW(), date_of_birth)) AS age,
@@ -25,7 +25,7 @@ exports.getCustomersByQuery = async (searchTerm) => {
 	    sources ON customers.source_id = sources.source_id
     WHERE
       first_name || ' ' || last_name LIKE '%' || $1 || '%'
-      OR israeli_id LIKE '%' || $1 || '%'
+      OR LPAD(israeli_id::TEXT, 9, '0') LIKE '%' || $1 || '%'
       OR mobile_number LIKE '%' || $1 || '%'
       OR notes LIKE '%' || $1 || '%';
   `;
@@ -40,7 +40,7 @@ exports.getCustomerById = async (id) => {
       customer_id,
       first_name,
       last_name,
-      israeli_id,
+      LPAD(israeli_id::TEXT, 9, '0') AS israeli_id,
 	    mobile_number,
 	    TO_CHAR(date_of_birth, 'DD.MM.YYYY') AS date_of_birth,
 	    EXTRACT(YEAR FROM AGE(NOW(), date_of_birth)) || '.' || EXTRACT(MONTH FROM AGE(NOW(), date_of_birth)) AS age,
