@@ -3,12 +3,13 @@ const cors = require("cors");
 
 const customersRoutes = require("./routes/customerRoutes");
 const appointmentsRoutes = require("./routes/appointmentsRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes.js");
 
 const sequelize = require("./models/sequelize");
 const app = express();
 
 app.use(cors({
-  origin: '*', // FOR UptimeRobot - STAY AWAKE FOR RENDER
+  origin: '*', // FOR "UPTIMEROBOT" - STAY AWAKE FOR RENDER
 }));
 app.use(express.json());
 
@@ -23,5 +24,6 @@ app.get("/health", (req, res) => {
 // API ROUTES
 app.use("/api/customers", customersRoutes);
 app.use("/api/appointments", appointmentsRoutes);
+app.use("/api/dashboard",dashboardRoutes)
 
 module.exports = app;
