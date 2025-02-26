@@ -53,6 +53,7 @@ The **Customers Management System** is designed to help small businesses **manag
 <!-- SCREENSHOTS -->
 <!-- <img width="1440" alt="image" src="https://github.com/user-attachments/assets/11f4d56c-d9fc-441f-944b-6c3d08ca3b8d" /> -->
 <!-- GRAPHS OF DB -->
+<!-- DEPLOYMENT AND DEVOPS: Render, NeonDB, UptimeRobot -->
 ---
 
 ## 📬 Contact Me  
