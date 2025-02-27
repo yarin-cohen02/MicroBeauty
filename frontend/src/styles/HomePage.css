@@ -1,0 +1,10 @@
+.home-page {
+  padding: 40px 50px;
+  color: rgb(87, 86, 86);
+}
+
+.greeting {
+  font-size: 20px;
+  margin: 0;
+  display: inline-block;
+}
