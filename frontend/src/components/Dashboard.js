@@ -46,7 +46,7 @@ const Dashboard = () => {
     labels: dashboardData.appointments.map((item) => item.period),
     datasets: [
       {
-        label: "תורים",
+        label: "לקוחות",
         data: dashboardData.appointments.map((item) => item.total_appointments),
         backgroundColor: "#8884d8",
       },
@@ -70,7 +70,7 @@ const Dashboard = () => {
     labels: dashboardData.canceled_appointments.map((item) => item.period),
     datasets: [
       {
-        label: "תורים",
+        label: "לקוחות",
         data: dashboardData.canceled_appointments.map((item) => item.canceled_count),
         backgroundColor: "#8884d8",
       },
@@ -94,7 +94,7 @@ const Dashboard = () => {
     labels: dashboardData.average_age.map((item) => item.period),
     datasets: [
       {
-        label: "תורים",
+        label: "לקוחות",
         data: dashboardData.average_age.map((item) => item.avg_age),
         backgroundColor: "#8884d8",
       },
@@ -134,34 +134,34 @@ const Dashboard = () => {
         </button>
         <div className="kpi-card">
           <h3>הכנסות עד כה</h3>
-          <p>{new Intl.NumberFormat().format(dashboardData.income[0].total_income)}</p>
+          <p>₪{new Intl.NumberFormat().format(dashboardData.income[0].total_income)}</p>
         </div>
         <div className="kpi-card">
           <h3>צפי הכנסות חזוי</h3>
-          <p>{new Intl.NumberFormat().format(dashboardData.expected_income[0].expected_income)}</p>
+          <p>₪{new Intl.NumberFormat().format(dashboardData.expected_income[0].expected_income)}</p>
         </div>
         <div className="kpi-card">
           <h3>רווח נטו</h3>
-          <p>{new Intl.NumberFormat().format(dashboardData.net_profit[0].net_profit)}</p>
+          <p>₪{new Intl.NumberFormat().format(dashboardData.net_profit[0].net_profit)}</p>
         </div>
         <div className="kpi-card">
-        <h3>רווח נטו</h3>
-        <p>{new Intl.NumberFormat().format(dashboardData.net_profit[0].net_profit)}</p>
+        <h3>מעודכן לתאריך</h3>
+        <p>00:49 01/03/2025</p>
         </div>
       </div>
 
       {/* Middle Section */}
       <div className="middle-section">
         <div className="chart-container">
-          <h3>כמות לקוחות לפי חודשים</h3>
+          <h3>{filter === "monthly" ? "כמות לקוחות לפי חודשים" : "כמות לקוחות לפי שנים"}</h3>
           <Line data={appointmentsData} options={chartOptions}/>
         </div>
         <div className="chart-container">
           <h3>מאיפה הגיעו הלקוחות?</h3>
-          <Pie data={customerSourcesData} options={{ plugins: { datalabels: { display: false } } }}/>
+          <Pie data={customerSourcesData} options={pieOptions}/>
         </div>
         <div className="chart-container">
-          <h3>ביטולים לפי חודשים</h3>
+          <h3>{filter === "monthly" ? "ביטולים לפי חודשים" : "ביטולים לפי שנים"}</h3>
           <Bar data={canceledAppointmentsData} options={chartOptions}/>
         </div>
         <div className="chart-container">
@@ -176,18 +176,19 @@ const Dashboard = () => {
       <div className="bottom-section">
       <div className="chart-container">
           <h3>סוגי טיפול</h3>
-          <Pie data={treatmentTypesData} options={{ plugins: { datalabels: { display: false } } }}/>
+          <Pie data={treatmentTypesData} options={pieOptions}/>
         </div>
         <div className="chart-container">
-          <h3>גיל ממוצע לפי חודשים</h3>
+          <h3>{filter === "monthly" ? "גיל ממוצע לפי חודשים" : "גיל ממוצע לפי שנים"}</h3>
           <Bar data={averageAgeData} options={chartOptions} />
         </div>
         <div className="chart-container">
           <h3>עיר מגורים</h3>
-          <Pie data={customerCitiesData} options={{ plugins: { datalabels: { display: false } } }}/>
+          <Pie data={customerCitiesData} options={pieOptions}/>
         </div>
         <div className="chart-container">
-          <h3>הכנסות לפי חודשים</h3>
+          <h3>{filter === "monthly" ? "הכנסות לפי חודשים" : "הכנסות לפי שנים"}</h3>
+          <Line data={appointmentsData} options={chartOptions}/>
         </div>
       </div>
     </div>
