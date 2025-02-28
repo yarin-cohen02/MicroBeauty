@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../styles/Dashboard.css";
 import config from "../config";
 import axios from "axios";
-import { Bar, Pie } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
+import { Bar, Pie, Line } from "react-chartjs-2";
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement} from 'chart.js';
 
 // Register chart.js components
 ChartJS.register(
@@ -13,7 +13,9 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  PointElement,
+  LineElement,
 );
 
 const Dashboard = () => {
@@ -111,13 +113,24 @@ const Dashboard = () => {
     ],
   };
 
+  const pieOptions = { 
+    plugins: { 
+      legend: { display: true }
+    } 
+  };
+  
+  const chartOptions = { 
+    plugins: { 
+      legend: { display: false }
+    } 
+  };  
 
   return (
     <div className="dashboard">
       {/* Top Section */}
       <div className="top-section">
         <button className="toggle-btn" onClick={() => setFilter(filter === "monthly" ? "yearly" : "monthly")}>
-          Toggle to {filter === "monthly" ? "Yearly" : "Monthly"} View
+          החלף לתצוגה {filter === "monthly" ? "שנתית" : "חודשית"}
         </button>
         <div className="kpi-card">
           <h3>הכנסות עד כה</h3>
@@ -141,19 +154,21 @@ const Dashboard = () => {
       <div className="middle-section">
         <div className="chart-container">
           <h3>כמות לקוחות לפי חודשים</h3>
-          <Bar data={appointmentsData} />
+          <Line data={appointmentsData} options={chartOptions}/>
         </div>
         <div className="chart-container">
           <h3>מאיפה הגיעו הלקוחות?</h3>
-          <Pie data={customerSourcesData} />
+          <Pie data={customerSourcesData} options={{ plugins: { datalabels: { display: false } } }}/>
         </div>
         <div className="chart-container">
           <h3>ביטולים לפי חודשים</h3>
-          <Bar data={canceledAppointmentsData} />
+          <Bar data={canceledAppointmentsData} options={chartOptions}/>
         </div>
         <div className="chart-container">
-          <h3>ביטולים לפי חודשים</h3>
-          <Bar data={canceledAppointmentsData} />
+          <h3>הפקת דוחות</h3>
+          <p>מאגר לקוחות</p>
+          <p>היסטוריית תורים</p>
+          <p>דוח הכנסות</p>
         </div>
       </div>
 
@@ -161,19 +176,18 @@ const Dashboard = () => {
       <div className="bottom-section">
       <div className="chart-container">
           <h3>סוגי טיפול</h3>
-          <Pie data={treatmentTypesData} />
+          <Pie data={treatmentTypesData} options={{ plugins: { datalabels: { display: false } } }}/>
         </div>
         <div className="chart-container">
           <h3>גיל ממוצע לפי חודשים</h3>
-          <Bar data={averageAgeData} />
+          <Bar data={averageAgeData} options={chartOptions} />
         </div>
         <div className="chart-container">
           <h3>עיר מגורים</h3>
-          <Pie data={customerCitiesData} />
+          <Pie data={customerCitiesData} options={{ plugins: { datalabels: { display: false } } }}/>
         </div>
         <div className="chart-container">
-          <h3>עיר מגורים</h3>
-          <Pie data={customerCitiesData} />
+          <h3>הכנסות לפי חודשים</h3>
         </div>
       </div>
     </div>

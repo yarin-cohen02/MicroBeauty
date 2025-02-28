@@ -2,10 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto auto;
-  gap: 10px;
-  height: 100vh;
-  padding: 10px;
-  box-sizing: border-box;
+  /* height: 100vh; */
+  margin: 0;
+  gap: 5%;
 }
 
 .top-section {
@@ -19,8 +18,6 @@
 .kpi-card {
   background-color: var(--color-4);
   border-radius: 8px;
-  /* padding: 10px; */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   width: 20%;
   text-align: center;
   font-size: 0.9em;
@@ -39,7 +36,8 @@
 
 /* Toggle Button */
 .toggle-btn {
-  background-color: #4caf50;
+  background-color: var(--color-2);
+  font-family: "Rubik";
   color: #fff;
   border: none;
   padding: 8px 15px;
@@ -56,8 +54,8 @@
   background-color: var(--color-4);
   border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 250px;
+  width: 22%;
+  height: 200px; /* Change this value */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,15 +64,17 @@
 
 .chart-container h3 {
   font-size: 1em;
-  color: #333;
   margin-bottom: 10px;
+}
+
+.chart-container p {
+  font-size: 1em;
+  margin: 5px;
 }
 
 .middle-section, .bottom-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 10px;
   grid-column: span 2;
 }
 

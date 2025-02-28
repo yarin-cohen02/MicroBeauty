@@ -15,7 +15,7 @@ const App = () => {
   root.style.setProperty("--color-3", config.COLOR_3);
   root.style.setProperty("--color-4", config.COLOR_4); 
 
-  const [currentPage, setCurrentPage] = useState("לקוחות");
+  const [currentPage, setCurrentPage] = useState("בית");
 
   const menuTabs = [
     { name: "בית", icon: "fa-house" },
