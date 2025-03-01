@@ -40,12 +40,14 @@ exports.getDashboardData = async (filter) => {
           ) AS period
         )
         SELECT 
-          TO_CHAR(ds.period, CASE WHEN '${period}' = 'year' THEN 'YYYY' ELSE 'MM/YY' END) AS period,
+          CASE 
+            WHEN LOWER('${period}') = 'year' THEN TO_CHAR(ds.period, 'YYYY') 
+            ELSE TO_CHAR(ds.period, 'MM/YY') 
+          END AS period,
           COALESCE(COUNT(a.appointment_id), 0) AS total_appointments
         FROM date_series ds
         LEFT JOIN appointments a 
           ON DATE_TRUNC('${period}', a.appointment_time) = ds.period 
-          AND a.appointment_type_id = 1 
           AND a.cancelled = FALSE
         GROUP BY ds.period
         ORDER BY ds.period ASC
@@ -70,7 +72,10 @@ exports.getDashboardData = async (filter) => {
           ) AS period
         )
         SELECT 
-          TO_CHAR(ds.period, CASE WHEN '${period}' = 'year' THEN 'YYYY' ELSE 'MM/YY' END) AS period,
+          CASE 
+            WHEN LOWER('${period}') = 'year' THEN TO_CHAR(ds.period, 'YYYY') 
+            ELSE TO_CHAR(ds.period, 'MM/YY') 
+          END AS period,
           COALESCE(COUNT(a.appointment_id), 0) AS canceled_count
         FROM date_series ds
         LEFT JOIN appointments a 
@@ -98,7 +103,10 @@ exports.getDashboardData = async (filter) => {
           ) AS period
         )
         SELECT 
-          TO_CHAR(ds.period, CASE WHEN '${period}' = 'year' THEN 'YYYY' ELSE 'MM/YY' END) AS period,
+          CASE 
+            WHEN LOWER('${period}') = 'year' THEN TO_CHAR(ds.period, 'YYYY') 
+            ELSE TO_CHAR(ds.period, 'MM/YY') 
+          END AS period,
           COALESCE(FLOOR(AVG(EXTRACT(YEAR FROM AGE(c.date_of_birth)))) || '.' || 
                    FLOOR(AVG(EXTRACT(MONTH FROM AGE(c.date_of_birth)))), '0.0') AS avg_age
         FROM date_series ds
@@ -119,9 +127,30 @@ exports.getDashboardData = async (filter) => {
           AND a.cancelled = FALSE
         GROUP BY ci.city_name
       `,
+
+      prev_incomes: `
+    WITH date_series AS (
+      SELECT GENERATE_SERIES(
+        DATE_TRUNC('${period}', NOW()) - INTERVAL '5 ${period}', 
+        DATE_TRUNC('${period}', NOW()), 
+        INTERVAL '1 ${period}'
+      ) AS period
+    )
+    SELECT 
+      CASE 
+        WHEN LOWER('${period}') = 'year' THEN TO_CHAR(ds.period, 'YYYY') 
+        ELSE TO_CHAR(ds.period, 'MM/YY') 
+      END AS period,
+      COALESCE(SUM(a.price_for_appointment), 0) AS total_income
+    FROM date_series ds
+    LEFT JOIN appointments a 
+      ON DATE_TRUNC('${period}', a.appointment_time) = ds.period 
+      AND a.cancelled = FALSE
+    GROUP BY ds.period
+    ORDER BY ds.period ASC
+  `,
     };
     
-
   try {
     const results = await Promise.all(Object.entries(queries).map(async ([key, query]) => {
       const { rows } = await pool.query(query);

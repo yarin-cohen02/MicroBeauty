@@ -70,7 +70,7 @@ const Dashboard = () => {
     labels: dashboardData.canceled_appointments.map((item) => item.period),
     datasets: [
       {
-        label: "לקוחות",
+        label: "ביטולים",
         data: dashboardData.canceled_appointments.map((item) => item.canceled_count),
         backgroundColor: "#8884d8",
       },
@@ -94,7 +94,7 @@ const Dashboard = () => {
     labels: dashboardData.average_age.map((item) => item.period),
     datasets: [
       {
-        label: "לקוחות",
+        label: "גיל ממוצע",
         data: dashboardData.average_age.map((item) => item.avg_age),
         backgroundColor: "#8884d8",
       },
