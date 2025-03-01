@@ -4,6 +4,7 @@ import config from "../config";
 import axios from "axios";
 import { Bar, Pie, Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement} from 'chart.js';
+import ReportsGenerator from "./ReportsGenerator.js";
 
 // Register chart.js components
 ChartJS.register(
@@ -125,13 +126,19 @@ const Dashboard = () => {
     ],
   };
 
-  const pieOptions = { 
+  const pieOptions = {
+    responsive: true,
+    maintainAspectRatio: true, 
+    aspectRatio: 2,
     plugins: { 
       legend: { display: true }
     } 
   };
   
   const chartOptions = { 
+    responsive: true,
+    maintainAspectRatio: true, 
+    aspectRatio: 2,
     plugins: { 
       legend: { display: false }
     } 
@@ -176,12 +183,7 @@ const Dashboard = () => {
           <h3>{filter === "monthly" ? "ביטולים לפי חודשים" : "ביטולים לפי שנים"}</h3>
           <Bar data={canceledAppointmentsData} options={chartOptions}/>
         </div>
-        <div className="chart-container">
-          <h3>הפקת דוחות</h3>
-          <p>מאגר לקוחות</p>
-          <p>היסטוריית תורים</p>
-          <p>דוח הכנסות</p>
-        </div>
+        <ReportsGenerator/>
       </div>
 
       {/* Bottom Section */}

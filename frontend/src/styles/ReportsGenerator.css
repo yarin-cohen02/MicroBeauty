@@ -1,0 +1,72 @@
+.reports-container {
+    background-color: var(--color-4);
+    border-radius: 8px;
+    padding: 10px;
+    width: 22%;
+    height: 200px;
+    overflow: visible; /* Allow tooltip to show outside */
+  }
+  
+  .reports-container h3 {
+    font-size: 1em;
+    margin: 10px 5px;
+  }
+  
+  .report-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .generate-button {
+    background-color: var(--color-3);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Rubik";
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .report-title {
+    font-size: 1em;
+    margin: 0 5px;
+  }
+  
+  .tooltip {
+    font-size: 14px;
+    color: #007BFF;
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block; /* Ensures proper positioning */
+  }
+  
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%; /* Position below the tooltip element */
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Ensure perfect centering */
+    margin-top: 5px; /* Space between the element and tooltip */
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+    direction: rtl;  /* Ensure Hebrew text is displayed correctly */
+    text-align: center;  /* Center the text */
+  }
+  
+  .tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  

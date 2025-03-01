@@ -55,21 +55,17 @@
   border-radius: 8px;
   padding: 10px;
   width: 22%;
-  height: 200px; /* Change this value */
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .chart-container h3 {
   font-size: 1em;
   margin-bottom: 10px;
-}
-
-.chart-container p {
-  font-size: 1em;
-  margin: 5px;
 }
 
 .middle-section, .bottom-section {
