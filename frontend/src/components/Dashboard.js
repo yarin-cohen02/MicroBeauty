@@ -113,6 +113,18 @@ const Dashboard = () => {
     ],
   };
 
+  // COLUMNS
+  const prevIncomesData = {
+    labels: dashboardData.prev_incomes.map((item) => item.period),
+    datasets: [
+      {
+        label: "הכנסות",
+        data: dashboardData.prev_incomes.map((item) => item.total_income),
+        backgroundColor: "#8884d8",
+      },
+    ],
+  };
+
   const pieOptions = { 
     plugins: { 
       legend: { display: true }
@@ -188,7 +200,7 @@ const Dashboard = () => {
         </div>
         <div className="chart-container">
           <h3>{filter === "monthly" ? "הכנסות לפי חודשים" : "הכנסות לפי שנים"}</h3>
-          <Line data={appointmentsData} options={chartOptions}/>
+          <Line data={prevIncomesData} options={chartOptions}/>
         </div>
       </div>
     </div>
