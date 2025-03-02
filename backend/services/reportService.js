@@ -21,6 +21,7 @@ exports.getCustomersReportData = async () => {
     FROM customers
     LEFT JOIN cities ON customers.city_id = cities.city_id
     LEFT JOIN sources ON customers.source_id = sources.source_id
+    ORDER BY last_name, first_name;
   `; 
   try {
     const result = await pool.query(query);
