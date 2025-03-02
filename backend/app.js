@@ -4,6 +4,7 @@ const cors = require("cors");
 const customersRoutes = require("./routes/customerRoutes");
 const appointmentsRoutes = require("./routes/appointmentsRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes.js");
+const reportsRoutes = require("./routes/reportsRoutes.js");
 
 const sequelize = require("./models/sequelize");
 const app = express();
@@ -24,6 +25,7 @@ app.get("/health", (req, res) => {
 // API ROUTES
 app.use("/api/customers", customersRoutes);
 app.use("/api/appointments", appointmentsRoutes);
-app.use("/api/dashboard",dashboardRoutes)
+app.use("/api/dashboard",dashboardRoutes);
+app.use("/api/reports",reportsRoutes);
 
 module.exports = app;
