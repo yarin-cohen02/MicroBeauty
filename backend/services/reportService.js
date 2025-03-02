@@ -4,7 +4,7 @@ const pool = require('../config/poolConfig');
 exports.getCustomersReportData = async () => {
   const query = `
     SELECT
-        customer_id AS "מספר לקוח",
+        customer_id,
         first_name AS "שם פרטי",
         last_name AS "שם משפחה",
         LPAD(CAST(israeli_id AS TEXT), 9, '0') AS "תעודת זהות",
