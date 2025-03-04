@@ -1,6 +1,5 @@
 const pool = require('../config/poolConfig'); 
 
-// Fetching customers report data from the database
 exports.getCustomersReportData = async () => {
   const query = `
     SELECT
@@ -31,9 +30,24 @@ exports.getCustomersReportData = async () => {
   }
 };
 
-// Fetching appointments report data from the database
 exports.getAppointmentsReportData = async () => {
-  const query = `...`;  // Your SQL query for appointments report
+  const query = `
+    SELECT
+      a.appointment_id,
+      TO_CHAR(a.appointment_time, 'DD/MM/YYYY') AS "appointment_date",
+      TO_CHAR(a.appointment_time, 'HH24:MI') AS "start_time",  
+      c.customer_id AS "customer_id",
+      c.first_name || ' ' || c.last_name AS "customer_name",
+      at.type_name AS "appointment_type",
+      t.treatment_name AS "treatment_type",
+      a.arrived,
+      a.price_for_appointment
+    FROM appointments a
+    LEFT JOIN customers c ON a.customer_id = c.customer_id
+    LEFT JOIN appointment_types at ON a.appointment_type_id = at.appointment_type_id
+    LEFT JOIN treatments t ON a.treatment_type_id = t.treatment_type_id
+    ORDER BY a.appointment_time;
+  `;  
   try {
     const result = await pool.query(query);
     return result.rows;
@@ -42,9 +56,21 @@ exports.getAppointmentsReportData = async () => {
   }
 };
 
-// Fetching incomes report data from the database
 exports.getIncomesReportData = async () => {
-  const query = `...`;  // Your SQL query for incomes report
+  const query = `
+    SELECT
+      p.payment_id,
+      TO_CHAR(p.payment_date,'DD/MM/YYYY') AS "payment_date",
+      customers.first_name || ' ' || customers.last_name AS "paying_customer",
+      appointments.customer_id AS "customer_id",
+      p.amount,
+      pay_methods.name AS "pay_method"
+    FROM payments p
+    LEFT JOIN pay_methods ON p.pay_method_id = pay_methods.id
+    LEFT JOIN appointments ON p.appointment_id = appointments.appointment_id
+    LEFT JOIN customers ON appointments.customer_id = customers.customer_id
+    ORDER BY payment_date;
+  `; 
   try {
     const result = await pool.query(query);
     return result.rows;

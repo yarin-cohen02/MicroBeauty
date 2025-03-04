@@ -5,13 +5,13 @@ const {
   getIncomesReportData 
 } = require('../services/reportService.js');
 
-// Controller function to handle customers report download
+
 exports.customersReport = async (req, res) => {
   try {
     const data = await getCustomersReportData();
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet('Customers Report');
+    const worksheet = workbook.addWorksheet('Customers Report', { views: [{ rightToLeft: true }] });
 
     worksheet.columns = [
       { header: 'מספר לקוח', key: 'customer_id', width: 15 },
@@ -58,31 +58,37 @@ exports.customersReport = async (req, res) => {
   }
 };
 
-// Controller function to handle appointments report download
+
 exports.appointmentsReport = async (req, res) => {
   try {
     const data = await getAppointmentsReportData();
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet('Appointments Report');
+    const worksheet = workbook.addWorksheet('Appointments Report', { views: [{ rightToLeft: true }] });
 
     worksheet.columns = [
-      { header: 'Appointment ID', key: 'appointment_id', width: 15 },
-      { header: 'Customer Name', key: 'customer_name', width: 30 },
-      { header: 'Date', key: 'appointment_date', width: 20 },
-      { header: 'Status', key: 'status', width: 10 },
-      { header: 'Treatment Type', key: 'treatment_type', width: 20 },
-      { header: 'Notes', key: 'notes', width: 30 },
+      { header: 'מספר תור', key: 'appointment_id', width: 15 },
+      { header: 'תאריך תור', key: 'appointment_date', width: 30 },
+      { header: 'שעה', key: 'start_time', width: 20 },
+      { header: 'מספר לקוח', key: 'customer_id', width: 10 },
+      { header: 'שם לקוח', key: 'customer_name', width: 20 },
+      { header: 'סוג תור', key: 'appointment_type', width: 30 },
+      { header: 'טכניקה', key: 'treatment_type', width: 30 },
+      { header: 'הגיעה', key: 'arrived', width: 30 },
+      { header: 'מחיר', key: 'price_for_appointment', width: 30 },
     ];
 
     data.forEach(row => {
       worksheet.addRow({
         appointment_id: row.appointment_id,
-        customer_name: row.customer_name,
         appointment_date: row.appointment_date,
-        status: row.status,
+        start_time: row.start_time,
+        customer_id: row.customer_id,
+        customer_name: row.customer_name,
+        appointment_type: row.appointment_type,
         treatment_type: row.treatment_type,
-        notes: row.notes,
+        arrived: row.arrived ? 'V' : 'X',
+        price_for_appointment: row.price_for_appointment,
       });
     });
 
@@ -97,29 +103,31 @@ exports.appointmentsReport = async (req, res) => {
   }
 };
 
-// Controller function to handle incomes report download
+
 exports.incomesReport = async (req, res) => {
   try {
     const data = await getIncomesReportData();
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet('Incomes Report');
+    const worksheet = workbook.addWorksheet('Incomes Report', { views: [{ rightToLeft: true }] });
 
     worksheet.columns = [
-      { header: 'Date', key: 'income_date', width: 15 },
-      { header: 'Amount', key: 'amount', width: 15 },
-      { header: 'Payment Method', key: 'payment_method', width: 20 },
-      { header: 'Customer Name', key: 'customer_name', width: 30 },
-      { header: 'Notes', key: 'notes', width: 30 },
+      { header: 'מזהה תשלום', key: 'payment_id', width: 15 },
+      { header: 'תאריך תשלום', key: 'payment_date', width: 15 },
+      { header: 'לקוח משלם', key: 'paying_customer', width: 15 },
+      { header: 'מספר לקוח', key: 'customer_id', width: 15 },
+      { header: 'סכום', key: 'amount', width: 15 },
+      { header: 'שיטת תשלום', key: 'pay_method', width: 15 },
     ];
 
     data.forEach(row => {
       worksheet.addRow({
-        income_date: row.income_date,
+        payment_id: row.payment_id,
+        payment_date: row.payment_date,
+        paying_customer: row.paying_customer,
+        customer_id: row.customer_id,
         amount: row.amount,
-        payment_method: row.payment_method,
-        customer_name: row.customer_name,
-        notes: row.notes,
+        pay_method: row.pay_method,
       });
     });
 
