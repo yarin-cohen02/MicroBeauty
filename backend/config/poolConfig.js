@@ -11,10 +11,20 @@ const pool = new Pool({
     require: true,
     rejectUnauthorized: false,
   },
-  max: 5, // Limit to 10 connections (adjust based on traffic)
-  idleTimeoutMillis: 30000, // Close idle connections after 30s
-  connectionTimeoutMillis: 5000, // Fail if connection takes >5s
+  max: 5, 
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 5000,
 });
+
+setInterval(async () => {
+  try {
+    const client = await pool.connect();
+    await client.query('SELECT 1'); // Keep connection alive
+    client.release();
+  } catch (err) {
+    console.error('Error keeping DB connection alive:', err);
+  }
+}, 60000); // Run every 60 seconds
 
 module.exports = pool;
 

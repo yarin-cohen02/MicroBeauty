@@ -1,8 +1,8 @@
 const app = require("./app");
 const sequelize = require("./utils/sequelize");
+const pool = require('./pool');
 
-
-require("./services/reminderService");
+// require("./services/reminderService");
 const PORT = process.env.PORT || 5001;
 
 sequelize
