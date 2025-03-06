@@ -1,0 +1,86 @@
+.send-sms {
+    margin: 50px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.message-body {
+    margin-bottom: 10px;
+}
+
+.labels {
+    width: 200px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.send-sms span {
+    font-size: 13px;
+}
+
+.send-sms textarea {
+    width: 700px;
+    resize: none;
+    font-family: "Rubik";
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+}
+
+.send-sms input {
+    font-family: "Rubik";
+    font-size: 1em;
+    margin-left: 10px;
+    padding: 0 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.send-sms button {
+    font-family: "Rubik";
+    background-color: var(--color-2);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.controls button {
+    background-color: var(--color-3);
+    color: var(--color-2)
+}
+
+/* Custom styling for the DatePicker */
+.custom-datepicker {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .react-datepicker__triangle, .react-datepicker__navigation {
+    background-color: transparent !important; /* Avoid overriding */
+}   
+.react-datepicker__input-container input {
+    padding: 10px;
+  }
+
+  .react-datepicker__day, 
+    .react-datepicker__month-text, 
+    .react-datepicker__header, 
+    .react-datepicker__day-name, 
+    .react-datepicker__current-month {
+  font-family: "Rubik";
+}
