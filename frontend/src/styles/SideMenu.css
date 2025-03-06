@@ -1,0 +1,33 @@
+.side-menu {
+  height: 100vh;
+  width: 200px;
+  background-color: var(--color-4);
+  border-left: 1px solid #e9ecef;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.side-menu li {
+  list-style: none;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--color-4);
+  transition: background-color 0.3s, border-right 0.3s;
+}
+
+.side-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+.side-menu li.active {
+  background-color: white;
+  border-right: none;
+}

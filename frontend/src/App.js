@@ -7,6 +7,7 @@ import ModalConnection from "./components/ModalConnection";
 
 import CustomersPage from "./pages/CustomersPage";
 import HomePage from "./pages/HomePage";
+import SmsPage from "./pages/SmsPage";
 
 const App = () => {
   const root = document.documentElement;
@@ -31,7 +32,7 @@ const App = () => {
       case "לקוחות":
         return <CustomersPage />;
       case "מסרונים":
-        return <div>Appointments Page</div>;
+        return <SmsPage />;
       case "הגדרות":
         return <div>Settings Page</div>;
       default:

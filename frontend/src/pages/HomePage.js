@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/HomePage.css";
 import Dashboard from "../components/Dashboard.js";
-import axios from "axios";
-import config from "../config";
 
 const HomePage = () => {
 

@@ -21,7 +21,6 @@ setInterval(async () => {
     const client = await pool.connect();
     await client.query('SELECT 1'); // Keep connection alive
     client.release();
-    console.log('Database keep-alive query executed');
   } catch (err) {
     console.error('Error keeping DB connection alive:', err);
   }
