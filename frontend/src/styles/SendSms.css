@@ -56,31 +56,43 @@
     margin-left: 10px;
 }
 
-.controls button {
-    background-color: var(--color-3);
-    color: var(--color-2)
+.send-sms button:hover {
+    background-color: var(--color-1);
+    transition: background-color 0.5s;
 }
 
-/* Custom styling for the DatePicker */
+.send-sms .selected {
+    background-color: var(--color-1) !important;
+    transition: background-color 0.5s;
+}
+
+.controls button {
+    background-color: var(--color-3);
+    color: var(--color-2);
+}
+
+/* Custom styling for the DatePicker */ 
 .custom-datepicker {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-  }
+}
   
-  .react-datepicker__triangle, .react-datepicker__navigation {
-    background-color: transparent !important; /* Avoid overriding */
+.react-datepicker__triangle, .react-datepicker__navigation {
+    background-color: transparent !important;
 }   
-.react-datepicker__input-container input {
-    padding: 10px;
-  }
 
-  .react-datepicker__day, 
-    .react-datepicker__month-text, 
-    .react-datepicker__header, 
-    .react-datepicker__day-name, 
-    .react-datepicker__current-month {
-  font-family: "Rubik";
+.react-datepicker__input-container input {
+    padding: 8px;
+    font-size: 13.33px;
+}
+
+.react-datepicker__day, 
+.react-datepicker__month-text, 
+.react-datepicker__header, 
+.react-datepicker__day-name, 
+.react-datepicker__current-month {
+    font-family: "Rubik";
 }
