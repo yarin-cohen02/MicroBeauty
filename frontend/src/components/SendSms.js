@@ -146,7 +146,9 @@ const SendSms = () => {
                             minLength={3}
                             debounceTimeout={500}
                             isClearable
+                            isRtl
                             isLoading={isLoading}
+                            
                         />
                     )}
                     {selectedRecipients === "תור בטווח תאריכים" && (

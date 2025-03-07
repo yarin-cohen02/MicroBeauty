@@ -73,7 +73,7 @@
 
 /* Custom styling for the DatePicker */ 
 .custom-datepicker {
-    width: 100%;
+    width: 200px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -87,6 +87,7 @@
 .react-datepicker__input-container input {
     padding: 8px;
     font-size: 13.33px;
+    display: inline-block;
 }
 
 .react-datepicker__day, 
