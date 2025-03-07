@@ -5,6 +5,7 @@ const customersRoutes = require("./routes/customerRoutes");
 const appointmentsRoutes = require("./routes/appointmentsRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes.js");
 const reportsRoutes = require("./routes/reportsRoutes.js");
+const smsRoutes = require("./routes/smsRoutes.js");
 
 const sequelize = require("./models/sequelize");
 const app = express();
@@ -27,5 +28,6 @@ app.use("/api/customers", customersRoutes);
 app.use("/api/appointments", appointmentsRoutes);
 app.use("/api/dashboard",dashboardRoutes);
 app.use("/api/reports",reportsRoutes);
+app.use("/api/sms", smsRoutes);
 
 module.exports = app;

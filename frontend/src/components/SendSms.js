@@ -39,7 +39,7 @@ const SendSms = () => {
         try {
             const res = await fetch(`${config.API_BASE_URL}/api/customers?query=${query}`);
             const data = await res.json();
-            setCustomers(data.customers.map((item) => ({ label: `${item.first_name} ${item.last_name}`, value: item.id })));
+            setCustomers(data.customers.map((item) => ({ label: `${item.first_name} ${item.last_name}`, value: item.customer_id })));
         } catch (error) {
             console.error("Error fetching customers:", error);
         } finally {
@@ -134,6 +134,8 @@ const SendSms = () => {
                             placeholder="בחר טכניקה"
                             isClearable
                             isSearchable
+                            className="select-tool"
+                            noOptionsMessage={() => "לא נמצאו תוצאות"}
                         />
                     )}
                     {selectedRecipients === "לקוחה ספציפית" && (
@@ -148,7 +150,8 @@ const SendSms = () => {
                             isClearable
                             isRtl
                             isLoading={isLoading}
-                            
+                            className="select-tool"
+                            noOptionsMessage={() => "לא נמצאו תוצאות"}
                         />
                     )}
                     {selectedRecipients === "תור בטווח תאריכים" && (
