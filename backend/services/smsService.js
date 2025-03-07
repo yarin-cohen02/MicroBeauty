@@ -2,12 +2,59 @@ const pool = require("../config/poolConfig");
 
 const getCustomersByGroups = async (groups) => {
   try {
-    const query = `
-      SELECT phone_number AS "phoneNumber", first_name AS "firstName", 
-             last_name AS "lastName", treatment_type AS "treatmentType" 
-      FROM customers
-      WHERE group_id = ANY($1)
+    const allQuery = `
+      SELECT DISTINCT ON (c.customer_id) 
+          c.mobile_number, 
+          c.first_name, 
+          c.last_name, 
+          t.treatment_name AS treatment_type
+      FROM customers c
+      LEFT JOIN appointments a ON a.customer_id = c.customer_id
+      LEFT JOIN treatments t ON a.treatment_type_id = t.treatment_type_id
+      WHERE c.agreed_ads = TRUE
+      ORDER BY c.customer_id, a.appointment_time DESC;
     `;
+
+    const appointmentsQuery = `
+      SELECT DISTINCT ON (c.customer_id)
+        c.mobile_number,
+        c.first_name,
+        c.last_name,
+        t.treatment_name AS treatment_name
+      FROM appointments a
+      LEFT JOIN customers c ON a.customer_id = c.customer_id
+      LEFT JOIN treatments t ON a.treatment_type_id = t.treatment_type_id
+      WHERE a.appointment_time BETWEEN '_____' AND '_____'
+      AND c.agreed_ads = TRUE
+      ORDER BY c.customer_id, a.appointment_time DESC;
+    `;
+
+    const treatmentTypeQuery = `
+      SELECT DISTINCT ON (c.customer_id) 
+          c.mobile_number, 
+          c.first_name, 
+          c.last_name, 
+          t.treatment_name AS treatment_type
+      FROM customers c
+      LEFT JOIN appointments a ON a.customer_id = c.customer_id
+      LEFT JOIN treatments t ON a.treatment_type_id = t.treatment_type_id
+      WHERE c.agreed_ads = TRUE AND t.treatment_type_id = ______
+      ORDER BY c.customer_id, a.appointment_time DESC;
+    `;
+
+    const certainCustomerQuery = `
+      SELECT DISTINCT ON (c.customer_id)
+        c.mobile_number, 
+        c.first_name, 
+        c.last_name, 
+        t.treatment_name AS treatment_type
+      FROM customers c
+      LEFT JOIN appointments a ON a.customer_id = c.customer_id
+      LEFT JOIN treatments t ON a.treatment_type_id = t.treatment_type_id
+      WHERE c.customer_id = _____
+      ORDER BY c.customer_id, a.appointment_time DESC;
+    `;
+
     const result = await pool.query(query, [groups]);
     return result.rows;
   } catch (error) {
