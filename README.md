@@ -58,7 +58,7 @@ The **Customers Management System** is designed to help small businesses **manag
   <img src="https://github.com/user-attachments/assets/77678c44-dd07-45c0-8ef5-3fd9ae0e11b5" alt="System Preview">
 </p>
 <p align="center">
-  <img width="1440" alt="System Preview" src="https://github.com/user-attachments/assets/86e4f67b-8fdf-448e-bf2d-18025d2bf72a" />
+  <img width="1440" alt="System Preview" src="https://github.com/user-attachments/assets/deb409ff-2bd4-4413-847b-53e549c72c2b" />
 </p>
 
 <!-- GRAPHS OF DB -->
