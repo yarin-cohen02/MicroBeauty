@@ -1,6 +1,6 @@
 # 💼 Customers Management System  
 
-Welcome to the **Customers Management System** – a powerful tool designed for small businesses, Originally developed for **IDITmicroBeauty LTD**.  
+Welcome to the **Customers Management System** – a powerful tool designed for small businesses, originally developed for **IDITmicroBeauty LTD**.  
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/494a3f77-e6e2-4eaf-bd3a-da24f03b4770" alt="System Preview">
